@@ -38,11 +38,11 @@ RUN chmod 777 /home/user
 ENV CONDA_AUTO_UPDATE_CONDA=false
 ENV PATH=/home/user/anaconda/bin:$PATH
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh \
- && chmod +x ~/anaconda.sh \
- && ~/anaconda.sh -b -p ~/anaconda \
+ && /bin/bash ~/anaconda.sh -b -p ~/anaconda \
  && rm ~/anaconda.sh \
  && echo ". /home/user/anaconda/etc/profile.d/conda.sh" >> ~/.bashrc \
- && echo "conda activate base" >> ~/.bashrc && \
+ && echo "conda activate base" >> ~/.bashrc 
+ && source ~/.bashrc
 
 # # Instead, install full anaconda
 # RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh && \
@@ -58,8 +58,6 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_6
 # enable conda base
 
 # CUDA 10.0-specific steps
-RUN source ~/.bashrc
-
 RUN conda install -y -c pytorch \
     cudatoolkit=10.0 \
     "pytorch" \
