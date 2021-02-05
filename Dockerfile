@@ -33,7 +33,6 @@ USER user
 # All users can use /home/user as their home directory
 ENV HOME=/home/user
 RUN chmod 777 /home/user
-RUN /bin/bash
 
 # Install anaconda and Python 3.8
 ENV CONDA_AUTO_UPDATE_CONDA=false
@@ -44,7 +43,8 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_6
  && echo ". /home/user/anaconda/etc/profile.d/conda.sh" >> ~/.bashrc \
  && echo "conda activate base" >> ~/.bashrc
  
-RUN source ~/.bashrc
+RUN . /home/user/anaconda/etc/profile.d/conda.sh && \
+    conda activate base
 
 # # Instead, install full anaconda
 # RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh && \
