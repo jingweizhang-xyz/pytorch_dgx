@@ -41,7 +41,7 @@ RUN curl -sLo ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2020.11-
  && chmod +x ~/anaconda.sh \
  && ~/anaconda.sh -b -p ~/anaconda \
  && rm ~/anaconda.sh \
- && echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc \
+ && echo ". /home/user/anaconda/etc/profile.d/conda.sh" >> ~/.bashrc \
  && echo "conda activate base" >> ~/.bashrc && \
 
 # # Instead, install full anaconda
