@@ -34,7 +34,7 @@ USER user
 ENV HOME=/home/user
 RUN chmod 777 /home/user
 
-Install anaconda and Python 3.8
+# Install anaconda and Python 3.8
 ENV CONDA_AUTO_UPDATE_CONDA=false
 ENV PATH=/home/user/anaconda/bin:$PATH
 RUN curl -sLo ~/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh \
@@ -65,7 +65,6 @@ RUN conda install -y -c pytorch \
     "pytorch" \
     "torchvision" \
  && conda clean -ya
-
 
 # other packages
 RUN conda install -y scikit-learn \
