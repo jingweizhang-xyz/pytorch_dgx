@@ -66,17 +66,13 @@ RUN conda install -y -c pytorch \
     "torchvision" \
  && conda clean -ya
 
-# other packages
-RUN conda install -y scikit-learn \
- && conda clean -ya
-
 #
-RUN conda install -y -c conda-forge \
-    py-opencv \
- && conda clean -ya
+# RUN conda install -y -c conda-forge \
+#     py-opencv \
+#  && conda clean -ya
 
 # 
-RUN pip install openslide-python
+RUN pip install openslide-python opencv-contrib-python
 
 # Set the default command to python3
 CMD ["python3"]
