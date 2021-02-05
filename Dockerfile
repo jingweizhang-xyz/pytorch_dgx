@@ -41,7 +41,7 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_6
  && /bin/bash ~/anaconda.sh -b -p ~/anaconda \
  && rm ~/anaconda.sh \
  && echo ". /home/user/anaconda/etc/profile.d/conda.sh" >> ~/.bashrc \
- && echo "conda activate base" >> ~/.bashrc 
+ && echo "conda activate base" >> ~/.bashrc \
  && source ~/.bashrc
 
 # # Instead, install full anaconda
