@@ -72,7 +72,7 @@ RUN conda install -y scikit-learn \
 
 #
 RUN conda install -y -c conda-forge \
-    py-opencv
+    py-opencv \
  && conda clean -ya
 
 # 
