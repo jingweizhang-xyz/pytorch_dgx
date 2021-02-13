@@ -1,5 +1,8 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
 
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV PATH /opt/conda/bin:$PATH
+
 # Install some basic utilities
 RUN apt-get update --fix-missing && apt upgrade -y && apt-get install -y \
     curl wget \
