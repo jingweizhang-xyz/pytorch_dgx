@@ -8,7 +8,6 @@ RUN apt-get update && apt upgrade -y && apt-get install -y \
     git \
     bzip2 \
     libx11-6 \
-    zsh \
     zip \
     wget \
     libglib2.0-0 \
@@ -16,7 +15,7 @@ RUN apt-get update && apt upgrade -y && apt-get install -y \
     libsm6 \
     libxrender1 \
     mercurial \
-    htop \
+    htop zsh vim\
     python3-openslide \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -73,6 +72,10 @@ RUN conda install -y -c pytorch \
 
 # 
 RUN pip install openslide-python opencv-contrib-python
+
+# setting up zsh using oh-my-zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
+    && sed -i 's/robbyrussell/kphoen/g' ~/.zshrc
 
 # Set the default command to python3
 CMD ["python3"]
