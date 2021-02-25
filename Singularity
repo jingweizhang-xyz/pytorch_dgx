@@ -2,8 +2,6 @@ BootStrap: docker
 From: nvidia/cuda:9.2-cudnn7-runtime-ubuntu16.04
 
 %environment
-    export LANG="C.UTF-8"
-    export LC_ALL="C.UTF-8"
     export PATH="/opt/conda/bin":$PATH
 
 %post
