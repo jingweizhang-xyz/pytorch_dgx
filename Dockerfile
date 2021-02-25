@@ -5,7 +5,7 @@ ENV PATH /opt/conda/bin:$PATH
 
 # Install some basic utilities
 RUN apt-get update --fix-missing && apt upgrade -y && apt-get install -y \
-    gcc \
+    gcc g++ build-essential\
     curl wget \
     ca-certificates \
     sudo \
