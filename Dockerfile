@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:9.2-cudnn7-runtime-ubuntu16.04
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
@@ -40,10 +40,7 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
     conda activate base
 
 # CUDA 10.0-specific steps
-RUN conda install -y -c pytorch \
-    cudatoolkit=10.0 \
-    "pytorch" \
-    "torchvision" \
+RUN conda install -y -c pytorch torchvision torchaudio cudatoolkit=9.2 cudnn \
  && conda clean -ya
 
 #
