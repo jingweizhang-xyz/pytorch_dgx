@@ -35,7 +35,7 @@ From: nvidia/cuda:9.2-cudnn7-runtime-ubuntu16.04
         conda activate base
     conda install -y -c pytorch torchvision torchaudio cudatoolkit=9.2 cudnn \
         && conda clean -ya
-    pip install openslide-python opencv-contrib-python pretrainedmodels kornia tensorboardX staintools spams
+    pip install openslide-python opencv-contrib-python pretrainedmodels kornia tensorboardX staintools spams gpustat
 
 %runscript
 	exec "$@"
