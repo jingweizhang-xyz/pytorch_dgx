@@ -50,7 +50,7 @@ RUN conda install -y -c pytorch torchvision torchaudio cudatoolkit=9.2 cudnn \
 #  && conda clean -ya
 
 # 
-RUN pip install openslide-python opencv-contrib-python pretrainedmodels kornia tensorboardX staintools spams
+RUN pip install openslide-python opencv-contrib-python pretrainedmodels kornia tensorboardX staintools spams gpustat
 
 # setting up zsh using oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
