@@ -1,1 +1,1 @@
-# pytorch_dgx
+# pytorch for harrier cluster
