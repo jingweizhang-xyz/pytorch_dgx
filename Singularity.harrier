@@ -33,7 +33,7 @@ From: nvidia/cuda:11.2.1-cudnn8-runtime-ubuntu20.04
         /opt/conda/bin/conda clean -afy
     . /opt/conda/etc/profile.d/conda.sh && \
         conda activate base
-    conda install -y -c pytorch torchvision torchaudio cudatoolkit=11.0 cudnn \
+    conda install -y -c pytorch torchvision torchaudio cudatoolkit=11.0 \
         && conda clean -ya
     pip install openslide-python opencv-contrib-python pretrainedmodels kornia tensorboardX staintools spams gpustat
 
