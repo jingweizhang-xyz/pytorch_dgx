@@ -1,7 +1,7 @@
 FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel #1.12.1-cuda11.3-cudnn8-devel
 #FROM nvcr.io/nvidia/pytorch:22.04-py3
 
-RUN apt-get update && apt install -y htop zsh openslide-tools vim git unzip zip libturbojpeg libvips dos2unix && apt-get clean
+RUN apt-get update && apt install -y htop zsh openslide-tools vim git unzip zip libturbojpeg libvips dos2unix ffmpeg libsm6 libxext6 && apt-get clean
 
 RUN conda install h5py numba -y
 
