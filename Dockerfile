@@ -12,9 +12,9 @@ RUN pip install pandas openslide-python opencv-contrib-python kornia gpustat pyt
 #prefetch_generator
 
 #RUN git clone https://github.com/NVIDIA/apex && cd apex && pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./ && cd .. && rm -rf apex
-RUN git clone https://github.com/NVIDIA/apex && cd apex && pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./ && cd .. && rm -rf apex
+#RUN git clone https://github.com/NVIDIA/apex && cd apex && pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./ && cd .. && rm -rf apex
 RUN mim install mmcv-full
-#RUN pip install mmsegmentation
+RUN pip install mmsegmentation
 #RUN git clone https://github.com/open-mmlab/mmsegmentation.git && cd mmsegmentation && pip install -v -e . && cd .. && rm -rf mmsegmentation
 RUN python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 
